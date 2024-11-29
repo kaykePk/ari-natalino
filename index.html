@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Natal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://i.pinimg.com/originals/b9/2c/ae/b92cae3bce6f1e3ba46d56c9ad38f7b2.gif"); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+            margin: auto;
+            max-width: 650px;
+            backdrop-filter: blur(3px);
+            background-image: url("https://i.makeagif.com/media/12-20-2017/DY_tTR.gif");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #ff5733;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+        h2 {
+            color: #000;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 5px solid #FFD700;
+        }
+        button {
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 10px;
+            background-color: #58a932;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #ff9900;
+            transform: translateY(-2px);
+        }
+        .options {
+            text-align: center; 
+            margin-top: 15px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin: auto;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .character {
+            margin-top: 30px;
+        }
+        .character img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: 2px solid #ffcc00;
+            margin-bottom: 20px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ff5733;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Quiz de Natal - Especial de Fim de Ano!</h1>
+
+    <input type="text" id="nome" placeholder="Seu nome aqui...">
+    <button onclick="gravarNome()">Iniciar o Teste</button>
+
+    <form id="quizForm" style="display:none;">
+        <h2>1. Quem é o personagem principal do Natal que viaja de trenó puxado por renas?</h2>
+        <div class="options">
+            <input type="radio" class="radios" name="p1" value="Papai Noel" id="p1_a1">
+            <label for="p1_a1">Papai Noel</label>
+            <input type="radio" class="radios" name="p1" value="Coelho da Páscoa" id="p1_a2">
+            <label for="p1_a2">Coelho da Páscoa</label>
+            <input type="radio" class="radios" name="p1" value="Duende" id="p1_a3">
+            <label for="p1_a3">Duende</label>
+            <input type="radio" class="radios" name="p1" value="Fada do Dente" id="p1_a4">
+            <label for="p1_a4">Fada do Dente</label>
+        </div>
+
+        <h2>2. Qual é o nome da famosa música de Natal que fala sobre um "bom velhinho" que vem de trenó?</h2>
+        <div class="options">
+            <input type="radio" class="radios" name="p2" value="Jingle Bells" id="p2_a1">
+            <label for="p2_a1">Jingle Bells</label>
+            <input type="radio" class="radios" name="p2" value="Noite Feliz" id="p2_a2">
+            <label for="p2_a2">Noite Feliz</label>
+            <input type="radio" class="radios" name="p2" value="Bate o Sino" id="p2_a3">
+            <label for="p2_a3">Bate o Sino</label>
+            <input type="radio" class="radios" name="p2" value="Então é Natal" id="p2_a4">
+            <label for="p2_a4">Então é Natal</label>
+        </div>
+
+        <h2>3. De qual país é a origem da tradição de decorar a árvore de Natal?</h2>
+        <div class="options">
+            <input type="radio" class="radios" name="p3" value="Alemanha" id="p3_a1">
+            <label for="p3_a1">Alemanha</label>
+            <input type="radio" class="radios" name="p3" value="França" id="p3_a2">
+            <label for="p3_a2">França</label>
+            <input type="radio" class="radios" name="p3" value="Brasil" id="p3_a3">
+            <label for="p3_a3">Brasil</label>
+            <input type="radio" class="radios" name="p3" value="Espanha" id="p3_a4">
+            <label for="p3_a4">Espanha</label>
+        </div>
+
+        <h2>4. Quantos reis magos visitaram o menino Jesus segundo a tradição cristã?</h2>
+        <div class="options">
+            <input type="radio" class="radios" name="p4" value="Três" id="p4_a1">
+            <label for="p4_a1">Três</label>
+            <input type="radio" class="radios" name="p4" value="Dois" id="p4_a2">
+            <label for="p4_a2">Dois</label>
+            <input type="radio" class="radios" name="p4" value="Quatro" id="p4_a3">
+            <label for="p4_a3">Quatro</label>
+            <input type="radio" class="radios" name="p4" value="Cinco" id="p4_a4">
+            <label for="p4_a4">Cinco</label>
+        </div>
+
+        <h2>5. Qual é o tradicional prato de Natal servido em muitos países durante o jantar de Natal?</h2>
+        <div class="options">
+            <input type="radio" class="radios" name="p5" value="Peru" id="p5_a1">
+            <label for="p5_a1">Peru</label>
+            <input type="radio" class="radios" name="p5" value="Frango" id="p5_a2">
+            <label for="p5_a2">Frango</label>
+            <input type="radio" class="radios" name="p5" value="Lombo" id="p5_a3">
+            <label for="p5_a3">Lombo</label>
+            <input type="radio" class="radios" name="p5" value="Bacalhau" id="p5_a4">
+            <label for="p5_a4">Bacalhau</label>
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Enviar Respostas</button>
+    </form>
+
+    <div id="resultado" style="display:none;"></div>
+    <div id="personagem" class="character" style="display:none;"></div>
+    <button id="reiniciar" style="display:none;" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
+</div>
+
+<script>
+    let nomeUsuario = '';
+    function gravarNome() {
+        nomeUsuario = document.getElementById('nome').value;
+        document.getElementById('quizForm').style.display = 'block';
+        document.getElementById('nome').style.display = 'none';
+        document.querySelector('button[onclick="gravarNome()"]').style.display = 'none';
+    }
+
+    function calcularResultado() {
+        let acertos = 0;
+        const respostasCorretas = ['Papai Noel', 'Jingle Bells', 'Alemanha', 'Três', 'Peru'];
+        for (let i = 1; i <= 5; i++) {
+            const radios = document.getElementsByName('p' + i);
+            for (const radio of radios) {
+                if (radio.checked && radio.value === respostasCorretas[i - 1]) {
+                    acertos++;
+                }
+            }
+        }
+
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.style.display = 'block';
+        resultadoDiv.innerHTML = `<h2>${nomeUsuario}, você acertou ${acertos} de 5 perguntas!</h2>`;
+
+        const personagemDiv = document.getElementById('personagem');
+        personagemDiv.style.display = 'block';
+
+        let personagem = '';
+        if (acertos === 5) {
+            personagem = '<h3>Você é o Papai Noel!</h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Jonathan_G_Meath_portrays_Santa_Claus.jpg/220px-Jonathan_G_Meath_portrays_Santa_Claus.jpg" alt="Papai Noel">';
+        } else if (acertos >= 3) {
+            personagem = '<h3>Você é uma Rena!</h3><img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/15/Rudolf-The-RedNosed-Reindeer-Digital-Painting-46666755-1-1.png" alt="Rena">';
+        } else if (acertos >= 2) {
+            personagem = '<h3>Você é o Grinch !</h3><img src="https://revista.meuretiro.com.br/wp-content/uploads/2021/12/grinch-1158x595-1.jpg" alt="Árvore de Natal">';
+        } else {
+            personagem = '<h3>Você é um Presentinho de Natal!</h3><img src="https://content6.flowwow-images.com/data/blog/84/657ae0f66e6de.jpg" alt="Presente">';
+        }
+        personagemDiv.innerHTML = personagem;
+        
+        document.getElementById('reiniciar').style.display = 'block';
+    }
+
+    function reiniciarQuiz() {
+        location.reload();
+    }
+</script>
+
+</body>
+</html>
